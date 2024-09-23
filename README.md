@@ -1,4 +1,19 @@
-# Sonic Pi Tau5
+                ─╟╛      █▄      ╪▓▀
+      ╓┤┤┤┤┤┤┤┤┤  ╩▌      ██      ▀▓▌
+        ▐▒   ╬▒     ╟▓╘    ─▓█      ▓▓├
+        ▒╫   ▒╪      ▓█     ▓▓─     ▓▓▄
+      ╒▒─  │▒       ▓█     ▓▓     ─▓▓─
+      ╬▒   ▄▒ ╒    ╪▓═    ╬▓╬     ▌▓▄
+      ╥╒   ╦╥     ╕█╒    ╙▓▐     ▄▓╫
+                  ▐╩     ▒▒      ▀▀
+                      ╒╪      ▐▄
+          ______            ______
+        /_  __/___ ___  __/ ____/
+          / / / __ `/ / / /___ \
+        / / / /_/ / /_/ /___/ /
+        /_/  \__,_/\__,_/_____/
+
+# Sonic Pi - Tau5
 
 This is the ground-up re-development of Sonic Pi. The codename for this work is Tau5. When completed it will become Sonic Pi v5.
 
