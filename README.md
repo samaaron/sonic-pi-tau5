@@ -1,107 +1,51 @@
-                                           ╘
-                                    ─       ╛▒╛
-                                     ▐╫       ▄█├
-                              ─╟╛      █▄      ╪▓▀
-                    ╓┤┤┤┤┤┤┤┤┤  ╩▌      ██      ▀▓▌
-                     ▐▒   ╬▒     ╟▓╘    ─▓█      ▓▓├
-                     ▒╫   ▒╪      ▓█     ▓▓─     ▓▓▄
-                    ╒▒─  │▒       ▓█     ▓▓     ─▓▓─
-                    ╬▒   ▄▒ ╒    ╪▓═    ╬▓╬     ▌▓▄
-                    ╥╒   ╦╥     ╕█╒    ╙▓▐     ▄▓╫
-                               ▐╩     ▒▒      ▀▀
-                                    ╒╪      ▐▄
+# Sonic Pi Tau5
 
-                 _____             __        ____  __
-                / ___/____  ____  /_/____   / __ \/_/
-                \__ \/ __ \/ __ \/ / ___/  / /_/ / /
-               ___/ / /_/ / / / / / /__   / ____/ /
-              /____/\____/_/ /_/_/\___/  /_/   /_/
+This is the ground-up re-development of Sonic Pi. The codename for this work is Tau5. When completed it will become Sonic Pi v5.
 
+The main technology for Tau5 is a VM called the BEAM which hosts both the Erlang and Elixir programming languages whilst also enabling low-latency comms with C++ native code for MIDI/Ableton Link/etc.
 
-## Code. Music. Live.
+## Next Collaboration
 
-Sonic Pi is a *new kind of musical instrument*. Instead of strumming
-strings or whacking things with sticks - you write code - **live**.
+Tau5 will focus enable next-level live-coding collaboration. It will support co-located, distributed and async jamming sessions.
 
-Sonic Pi has been designed with the aim to find a harmonious balance
-between three core principles:
+* Co-located Jamming - Tau5 jam-sessions will enable multiple participants and by default will always be in sync. This is independent yet co-operative with Ableton Link functionality which will also be included for co-located jamming with other software and systems.
 
-* **Simple** enough for the 10 year old within you
-* **Joyful** enough for you to lose yourself through play
-* **Powerful** enough for your own expressions
+* Distributed Jamming - Tau5 will enable synchronous  world-wide jam sessions using a central server for well-timed coordination of events.
 
-Sonic Pi is a complete open source programming environment originally
-designed to explore and *teach programming concepts* within schools through
-the process of creating *new sounds*.
+* Async Jamming - Tau5 will feature immutable code versions which will enable sharing, forking and modification of compositions/data riffs/algorithms that maintains and preserves provenance.
 
-In addition to being an engaging education resource it has evolved into
-an *extremely powerful* and performance-ready *live coding instrument* suitable
-for professional artists and DJs.
+## Next Language - Tau5Lang
 
-Whilst Education is a core focus it now sits at the intersection
-between three core domains:
+Ruby will not feature in Tau5. This is because it's not suited for sharing and running arbitrary code due to security issues.
 
-* **Art** - providing the means to express yourself and ask new questions of music and notation
-* **Technology** - exploring questions related to liveness, time and concurrency in programming languages
-* **Education**  - demonstrating that open play rather than rigid structures increases motivation and engagement in the classroom
+A new language - Tau5Lang - will be developed with syntactical similarity to Sonic Pi's Ruby DSL - but based on top of Lua.
 
-Again, finding a balance working to the best benefits of all these
-domains is the objective.
+Both Lua and Tau5Lang will be supported as firt-class-citizen langauges. This means it will be possible and safe to run other people's code as part of your own - relying on Lua's amazing sandboxing for security against nefarious algorithms.
 
+For the Lua implementation we will be using Luerl by Robert Virding. Luerl is a version of Lua written in Erlang running on the BEAM VM. This gives us incredible concurrency opportunities in addition to amazingly low-latency IO performance for handling events.
 
-* Info & Latest Releases: https://sonic-pi.net
-* Source: https://github.com/sonic-pi-net/sonic-pi
-* Computing Education Resources for Schools: https://www.raspberrypi.org/learning/sonic-pi-lessons/
-* Music Education Toolkit for Schools: https://sonic-pi.mehackit.org
+In addition to Lua and Tau5Lang, multiple next-gen mini-DSLs for syntacically precise descriptions of musical ideas are planned. These will all compile down to Lua and work seemlessly with the timing, event and state systems.
 
-## Contributors
+## Next GUI
 
-Sonic Pi has been developed with support from many individuals and organisations. Please see the [CONTRIBUTORS.md](https://github.com/samaaron/sonic-pi/blob/main/CONTRIBUTORS.md) file for a more complete list.
+Tau5 will feature a new GUI based on web-technology. This will enable collaborative jam sessions with other devices that have access to a web browser. It will also drastically speed the pace of development and enable much more exciting exploration and experimentation than the previous C++/Qt based GUI.
 
-## Translations
+For the web-tech stack we will be using Elixir and Phoenix LiveView.
 
-Sonic Pi's application and built in tutorial have been translated into several languages thanks to the awesome work of several [volunteer translators](CONTRIBUTORS.md#translation):
+## Next Visuals
 
-Status                                                                                                                                                       | Language            | Application        | Tutorial
------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------ | :----------------: | :----------------:
-[![Translation Status of Sonic Pi: da](https://hosted.weblate.org/widgets/sonic-pi/da/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Danish              | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: nl](https://hosted.weblate.org/widgets/sonic-pi/nl/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Dutch               | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: fi](https://hosted.weblate.org/widgets/sonic-pi/fi/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Finnish             | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: fr](https://hosted.weblate.org/widgets/sonic-pi/fr/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | French              | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: de](https://hosted.weblate.org/widgets/sonic-pi/de/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | German              | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: hu](https://hosted.weblate.org/widgets/sonic-pi/hu/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Hungarian           | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: is](https://hosted.weblate.org/widgets/sonic-pi/is/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Icelandic           | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: it](https://hosted.weblate.org/widgets/sonic-pi/it/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Italian             | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: ja](https://hosted.weblate.org/widgets/sonic-pi/ja/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Japanese            | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: nb](https://hosted.weblate.org/widgets/sonic-pi/nb/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Norwegian Bokmål    | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: pl](https://hosted.weblate.org/widgets/sonic-pi/pl/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Polish              | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: pt](https://hosted.weblate.org/widgets/sonic-pi/pt/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Portuguese          | :red_circle:       | :white_check_mark:
-[![Translation Status of Sonic Pi: ro](https://hosted.weblate.org/widgets/sonic-pi/ro/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Romanian            | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: ru](https://hosted.weblate.org/widgets/sonic-pi/ru/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Russian             | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: zh_Hans](https://hosted.weblate.org/widgets/sonic-pi/zh_Hans/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/) | Simplified Chinese  | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: es](https://hosted.weblate.org/widgets/sonic-pi/es/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | Spanish             | :white_check_mark: | :white_check_mark:
-[![Translation Status of Sonic Pi: si](https://hosted.weblate.org/widgets/sonic-pi/si/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)           | sinhalese           | :white_check_mark: | :red_circle:
-[![Translation Status of Sonic Pi: tr_TR](https://hosted.weblate.org/widgets/sonic-pi/tr_TR/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/) | Turkish             | :white_check_mark: | :red_circle:
+Tau5 will incoporate a variety of existing and wonderful web-tech visual projects. The first two confirmed targets will be Hydra by Olivia Jack and p5.js by the Processing Foundation. You will be able to generate and manipulate visuals directly from Tau5Lang in time with your music.
 
-Would you like to contribute a translation too? If so, please take a look at our [translation docs](https://github.com/samaaron/sonic-pi/blob/main/TRANSLATION.md) to get started.
+## Next Audio
 
-## Information for developers
+Tau5 will feature two independent audio stacks - SuperCollider and WebAudio.
 
-Sonic Pi is under active development, and welcomes new contributors:
+* SuperCollider will enable all of the power and stability that you already enjoy in Sonic Pi - all of Sonic Pi's synths, FX and audio capabilities will be directly available in Tau5 as you would expect them to be.
 
-* [Contributing](CONTRIBUTING.md)
-* [Change log](CHANGELOG.md)
-* [Community](COMMUNITY.md)
-* [Contributors](CONTRIBUTORS.md)
-* Building
-  - [Linux](BUILD-LINUX.md)
-  - [Mac](BUILD-MAC.md)
-  - [Windows](BUILD-WINDOWS.md)
-* [License](LICENSE.md)
-* [Testing](TESTING.md)
-* [Translation](TRANSLATION.md)
+* WebAudio will enable you to stream your music to connected web browser sessions enabling you make sounds in places SuperCollider can't reach.
 
-[![Weblate](https://hosted.weblate.org/widgets/sonic-pi/-/svg-badge.svg)](https://hosted.weblate.org/engage/sonic-pi/)
-<br/>
-[![Travis CI](https://travis-ci.org/samaaron/sonic-pi.svg?branch=main)](https://travis-ci.org/samaaron/sonic-pi)
-<br/> 
+## Next IO
+
+Tau5 will feature the same rock-solid well-timed OSC and MIDI implementations from Sonic Pi which are already running on the BEAM.
+
+We will also add the ability to send and receive events directly to all participants in your jam session for a new range of IO possibilities.
