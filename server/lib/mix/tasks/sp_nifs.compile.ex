@@ -8,7 +8,7 @@ defmodule Mix.Tasks.SpNifs.Compile do
 
     case :os.type() do
       {:unix, :darwin} -> compile(:macos, arch())
-      {:unix, :linux} -> compile(:linux, :x64)
+      {:unix, :linux} -> compile(:linux, arch())
       {:unix, :freebsd} -> compile(:linux, arch())
       {:unix, :openbsd} -> compile(:linux, arch())
       {:win32, :nt} -> compile(:win, arch())
