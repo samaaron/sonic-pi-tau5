@@ -8,7 +8,7 @@ defmodule Mix.Tasks.SpNifs.Compile do
 
     case :os.type() do
       {:unix, :darwin} -> compile(:macos, arch())
-      {:unix, :linux} -> compile(:linux, arch())
+      {:unix, :linux} -> compile(:linux, :x64)
       {:unix, :freebsd} -> compile(:linux, arch())
       {:unix, :openbsd} -> compile(:linux, arch())
       {:win32, :nt} -> compile(:win, arch())
@@ -77,6 +77,40 @@ defmodule Mix.Tasks.SpNifs.Compile do
       Logger.info("Building SP Link for macOS arm64 complete")
     end)
   end
+
+  defp compile(:linux, :x64) do
+    Logger.info("Compiling SPLink for Linux x64")
+    File.mkdir_p("deps/sp_link/build")
+
+    File.cd!("deps/sp_link/build", fn ->
+      {cmake_output, cmake_status} =
+        System.cmd("cmake", [
+          "-G",
+          "Unix Makefiles",
+          "-DCMAKE_INSTALL_PREFIX=../../../priv/nif",
+          "-DCMAKE_BUILD_TYPE=Release",
+          ".."
+        ])
+
+      Logger.debug("CMake output:\n#{cmake_output}")
+      if cmake_status != 0, do: raise("CMake failed with status #{cmake_status}")
+
+      {cmake_output, cmake_status} =
+        System.cmd("cmake", ["--build", ".", "--config", "Release"])
+
+      Logger.debug("CMake output:\n#{cmake_output}")
+      if cmake_status != 0, do: raise("CMake failed with status #{cmake_status}")
+
+      {cmake_output, cmake_status} =
+        System.cmd("cmake", ["--install", "."])
+
+      Logger.debug("CMake output:\n#{cmake_output}")
+      if cmake_status != 0, do: raise("CMake failed with status #{cmake_status}")
+
+      Logger.info("Building SP Link for Linux x64 complete")
+    end)
+  end
+
 
   defp compile(os, arch) do
     Logger.info("Uknown OS or architecture to compile for: #{inspect([os, arch])}")
